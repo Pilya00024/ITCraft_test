@@ -16,7 +16,7 @@ class Header extends Component {
                         <NavLink to={routeNames.market}>Market</NavLink>
                         <NavLink to={routeNames.cart}>
                             Cart
-                            <span className="counter">{cartList.length}</span>
+                            {!!cartList.length && (<span className="counter">{cartList.length}</span>)}
                         </NavLink>
                     </div>
                 )}
