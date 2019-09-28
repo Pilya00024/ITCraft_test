@@ -1,0 +1,13 @@
+@import '../../media/style/variables.scss';
+
+.footer {
+    margin-top: auto;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 1px solid $dark-blue;
+    background: $purple;
+    padding: 0 50px;
+    color: $white;
+}

@@ -1,0 +1,16 @@
+@import '../../media/style/variables.scss';
+
+.header {
+    min-height: 50px;
+    display: flex;
+    padding: 0 50px;
+    align-items: center;
+    border-bottom: 1px solid $dark-blue;
+    background: $purple;
+    box-shadow: 0 9px 18.4px 1.6px rgba(0, 0, 0, 0.12);
+    
+}
+.header__logo {
+    color: $white;
+    font-weight: bold;
+}
