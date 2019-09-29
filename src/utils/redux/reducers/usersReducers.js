@@ -8,14 +8,20 @@ const user = {
 
 const currentUser = (state = user, {type, email, password, isAuthorization}) => {
     switch (type) {
-      case types.ENTRY_USER:
+      case types.ENTRY_USER: 
         return { 
             ...state,
             isAuthorization,
             email,
             password,
          };
-      default:
+      case types.LOGOUT_USER: 
+        return {
+          isAuthorization: false,
+          email: '',
+          password: '',
+        };
+      default: 
         return state;
     }
   };

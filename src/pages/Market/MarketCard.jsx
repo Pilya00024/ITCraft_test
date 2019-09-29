@@ -10,9 +10,9 @@ const MarketCard = ({name, description, inCart, onClick}) => {
             <div className="market__card-description">{description}</div>
             {
                 inCart ? (
-                    <Button><Link to={routeNames.cart}>Go to cart</Link></Button>
+                    <Button className="market__card-button"><Link to={routeNames.cart}>Go to cart</Link></Button>
                 ) : (
-                    <Button onClick={onClick}>
+                    <Button className="market__card-button" onClick={onClick}>
                         Add to cart
                     </Button>
                 )

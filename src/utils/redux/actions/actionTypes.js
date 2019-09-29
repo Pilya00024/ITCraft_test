@@ -1,2 +1,4 @@
 export const ENTRY_USER = 'ENTRY_USER';
+export const LOGOUT_USER = 'LOGOUT_USER';
 export const CHANGE_PRODUCT_STATUS = 'CHANGE_PRODUCT_STATUS';
+export const CLEAR_CART = 'CLEAR_CART';

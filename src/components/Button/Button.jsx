@@ -1,9 +1,10 @@
 import React from 'react';
+import classNames from 'classnames';
 import './Button.scss';
 
-const Button = ({children, ...rest}) => {
+const Button = ({children, className, ...rest}) => {
     return (
-        <button className="button" {...rest}>
+        <button className={classNames("button", className)} {...rest}>
             {children}
         </button>
     )

@@ -48,7 +48,6 @@ class Login extends Component {
         const email = target.value;
         this.setState({
             email,
-            isEmailError: false,
         })
     };
 
@@ -56,22 +55,50 @@ class Login extends Component {
         const password = target.value;
         this.setState({
             password,
-            isPasswordError: false,
         })
     };
 
+    onBlur = (type) => {
+        const { email, password } = this.state;
+        if(type === 'email' && !!email) {
+            this.setState({
+                isEmailError: !validateEmail(email),
+            })
+        }
+        if(type === 'password' && !!password) {
+            this.setState({
+                isPasswordError: !validatePassword(password),
+            })
+        }
+    }
+
+    onFocus= (type) => {
+        if(type === 'email') {
+            this.setState({
+                isEmailError: false,
+            })
+
+        }
+        if(type === 'password') {
+            this.setState({
+                isPasswordError: false,
+            })
+        }
+    }
+
     render() {
-        console.log(this)
         const { email, password, isPasswordError, isEmailError } = this.state;
         return(
             <form className="login" onSubmit={this.onFormSubmit}>
-                <div className="login-container">
-                    <div className="login__header">Login</div>
+                <div className="login__header">Login</div>
                     <Input 
                         placeholder="e-mail"
                         type="text"
                         isError={isEmailError}
+                        errorText="Incorrect e-mail"
                         value={email}
+                        onBlur={() => this.onBlur('email')}
+                        onFocus={() => this.onFocus('email')}
                         onChange={this.handleEmail}
                     />
                     <Input 
@@ -79,6 +106,9 @@ class Login extends Component {
                         type="password"
                         value={password}
                         isError={isPasswordError}
+                        onFocus={() => this.onFocus('password')}
+                        onBlur={() => this.onBlur('password')}
+                        errorText="Incorrect password"
                         onChange={this.handlePassword}
                     />
                     <Button 
@@ -88,7 +118,6 @@ class Login extends Component {
                     >
                         Submit
                     </Button>
-                </div>
             </form>
         )
     }

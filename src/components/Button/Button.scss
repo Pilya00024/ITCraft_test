@@ -1,0 +1,21 @@
+@import '../../media/style/variables.scss';
+
+.button {
+    cursor: pointer;
+    background: $green;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+    width: max-content;
+    color: $white;
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.3);
+    a {
+        text-decoration: none;
+        color: $white;
+    }
+    &:disabled {
+        background: $gray-10;
+        pointer-events: none;
+        opacity: 0.8;
+    }
+}

@@ -21,15 +21,15 @@ class Cart extends Component {
         return(
             <div className="cart">
                 <div className="cart__title">Cart</div>
-                <div className="cartList">
+                <div className="cart__list">
                     {!!cartList.length ? (
                         <>
                             {
-                               cartList.map(({id, name, description}) => (
+                               cartList.map(({id, name}, index) => (
                                     <CartCard
                                         key={id}
+                                        index={++index}
                                         name={name}
-                                        description={description}
                                         onClick={() => this.removeProduct(id)}
                                     />
                                )) 
@@ -37,7 +37,7 @@ class Cart extends Component {
                         </>
                     ) : (
                         <div className="cart__empty">
-                            Nothing added to cart" and "add some at <Link to={routeNames.market}>market</Link>.
+                            Nothing added to cart, add some at <Link to={routeNames.market}>market</Link>.
                         </div>
                     )}
                 </div>

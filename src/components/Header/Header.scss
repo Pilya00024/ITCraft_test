@@ -10,7 +10,44 @@
     box-shadow: 0 9px 18.4px 1.6px rgba(0, 0, 0, 0.12);
     
 }
+
 .header__logo {
     color: $white;
     font-weight: bold;
+    text-decoration: none;
+}
+
+.header__nav-bar {
+    margin-left: auto;
+    display: flex;
+}
+.header__nav-bar__link {
+    display: block;
+    padding: 10px 20px;
+    background: $blue-10;
+    margin: 0 15px;
+    color: $white;
+    text-decoration: none;
+    border-radius: 10px;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        background: $blue;
+    }
+    &.active {
+        background: $blue;
+    }
+}
+
+.header__cart-counter {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background: #db2e31;
+    font-size: 12px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    text-align: center;
 }
